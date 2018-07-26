@@ -32,16 +32,26 @@ document.querySelector("#leaveShown").onchange = function(e) {
 //
 
 browser.storage.local.get("showType").then(function(item){
-	if (item.showType === undefined || item.showType === "showWithButton") {
-		document.querySelector("#showWithButton").checked = true;
-	} else if (item.showType === "showAlways") {
-		document.querySelector("#showAlways").checked = true;
-	} else if (item.showType === "showOnFocus") {
-		document.querySelector("#showOnFocus").checked = true;
+	switch (item.showType) {
+		case "showWithButton":
+			document.querySelector("#showWithButton").checked = true;
+			break;
+		case "showAlways":
+			document.querySelector("#showAlways").checked = true;
+			break;
+		case "showOnFocus":
+			document.querySelector("#showOnFocus").checked = true;
+			break;
+		case "showOnHover":
+			document.querySelector("#showOnHover").checked = true;
+			break;
+		default:
+			document.querySelector("#showWithButton").checked = true;
+			break;
 	}
 });
 
-var showType_options = document.querySelectorAll("#showWithButton, #showAlways, #showOnFocus");
+var showType_options = document.querySelectorAll("#showWithButton, #showAlways, #showOnFocus, #showOnHover");
 for (i = 0; i < showType_options.length; i++) {
 	showType_options[i].onchange = function(e) {
     browser.storage.local.set({ showType: this.value });

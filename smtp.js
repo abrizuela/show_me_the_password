@@ -48,6 +48,11 @@ function addFocusBlurEventListeners (inputPass) {
   inputPass.addEventListener("blur", function () { hidePassword(inputPass); }, false);
 };
 
+function addHoverEventListeners (inputPass) {
+  inputPass.addEventListener("mouseenter", function () { showPassword(inputPass); }, false);
+  inputPass.addEventListener("mouseleave", function () { hidePassword(inputPass); }, false);
+};
+
 function onError(error) {
   console.log("***Error***: " + error);
 };
@@ -66,6 +71,9 @@ function showMeThePassword(showType, leaveShown) {
             break;
           case "showOnFocus":
             addFocusBlurEventListeners(inputs[i]);
+            break;
+          case "showOnHover":
+            addHoverEventListeners(inputs[i]);
             break;
         };
       };
