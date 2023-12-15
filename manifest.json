@@ -1,43 +1,44 @@
 {
-  "applications": {
-    "gecko": {
-      "id": "showmethepassword@alejandrobrizuela.com.ar"
-    }
-  },
-
-  "manifest_version": 2,
-  "name": "Show me the password!",
-  "version": "2.1.1",
-  "description": "A simple addon that shows you the password (what you write)",
-
-  "icons": {
-    "48": "icons/smtp-icon-48.png",
-    "64": "icons/smtp-icon-64.png"
-  },
-  
-  "options_ui": {
-    "page": "options/options.html",
-    "browser_style": true
-  },
-
-  "permissions": [
-    "activeTab",
-    "storage"
-  ],
-  
-  "background": {
-    "scripts": ["background.js"]
-  },
-  
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["smtp.js"]
-    }
-  ],
-
-  "web_accessible_resources": [
-    "icons/eye-icon-16.png"
-  ]
-
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "showmethepassword@alejandrobrizuela.com.ar"
+        },
+        "gecko_android": {
+            "id": "showmethepassword@alejandrobrizuela.com.ar"
+        }
+    },
+    "manifest_version": 2,
+    "name": "Show me the password!",
+    "version": "3.0.0",
+    "description": "A simple addon that shows you the password (what you write)",
+    "icons": {
+        "48": "icons/smtp-icon-48.png",
+        "64": "icons/smtp-icon-64.png"
+    },
+    "options_ui": {
+        "page": "options/options.html",
+        "browser_style": true
+    },
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "smtp.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "icons/eye-icon-16.png"
+    ]
 }
