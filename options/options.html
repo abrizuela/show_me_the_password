@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 
 <html>
-  
-  <head>
-    <meta charset="utf-8">
-  </head>
 
-  <body>
-    <form>
-      <h3>Choose how to show the password</h3>
-      <input id="showWithButton" type="radio" name="showType" class="showType" value="showWithButton">
-      <label>With a button</label>
-      <input id="leaveShown" type="checkbox" name="leaveShown" >
-      <label>Leave the password shown on click</label><br />
-      <input id="showAlways" type="radio" name="showType" class="showType" value="showAlways">
-      <label> Always</label><br />
-      <input id="showOnFocus" type="radio" name="showType" class="showType" value="showOnFocus">
-      <label> When the password gets focus</label><br />
-      <input id="showOnHover" type="radio" name="showType" class="showType" value="showOnHover">
-      <label> When the mouse hovers the password textbox</label><br />
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/options/options.css">
+</head>
+
+<body>
+    <div id="smtp_header">
+        <div class="image">
+            <img src="/icons/smtp-icon.png">
+        </div>
+        <div class="text">
+            <h1>Show me the password! Options</h1>
+        </div>
+    </div>
+    <form id="smtp_options_form">
+        <h3>Choose how to show the password</h3>
+        <input id="showWithButton" type="radio" name="showType" class="showType" value="showWithButton">
+        <label for="showWithButton">With a button</label>
+        <input id="leaveShown" type="checkbox" name="leaveShown">
+        <label for="leaveShown">Leave the password shown on click</label><br />
+        <input id="showAlways" type="radio" name="showType" class="showType" value="showAlways">
+        <label for="showAlways"> Always</label><br />
+        <input id="showOnFocus" type="radio" name="showType" class="showType" value="showOnFocus">
+        <label for="showOnFocus"> When the password gets focus</label><br />
+        <input id="showOnHover" type="radio" name="showType" class="showType" value="showOnHover">
+        <label for="showOnHover"> When the mouse hovers the password textbox</label><br />
     </form>
+    <div id="errorMessage" class="hidden">Invalid shortcut, please try another one!</div>
+    <div id="updatedMessage" class="hidden">Settings saved!</div>
 
     <script src="/options/options.js"></script>
 
-  </body>
+</body>
 
 </html>

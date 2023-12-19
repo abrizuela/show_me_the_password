@@ -101,5 +101,5 @@ function onGot(restoredSettings) {
     showMeThePassword(showType, leaveShown);
 };
 
-var gettingStoredSettings = browser.storage.local.get();
+var gettingStoredSettings = browser.storage.sync.get();
 gettingStoredSettings.then(onGot, onError);
