@@ -9,7 +9,7 @@
     },
     "manifest_version": 2,
     "name": "Show me the password!",
-    "version": "3.1.0",
+    "version": "3.1.1",
     "description": "A simple addon that shows you the password (what you write)",
     "icons": {
         "48": "icons/smtp-icon-48.png",
@@ -17,7 +17,7 @@
     },
     "options_ui": {
         "page": "options/options.html",
-        "open_in_tab": true
+        "open_in_tab": false
     },
     "permissions": [
         "activeTab",
